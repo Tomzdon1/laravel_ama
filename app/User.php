@@ -26,4 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function roles() {
+       return $this->belongsToMany(Roles::class, 'role_has_users', 'users_id', 'roles_id')->withTimestamps();
+    }
 }
