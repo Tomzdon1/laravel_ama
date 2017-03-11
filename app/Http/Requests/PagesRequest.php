@@ -28,4 +28,11 @@ class PagesRequest extends FormRequest
             'content' => 'required'
         ];
     }
+    public function messages()
+    {
+        return [
+            'title.required' => 'Pole tytuł jest wymagane',
+            'content.required' => 'Pole treść jest wymagane'
+        ];
+    }
 }
