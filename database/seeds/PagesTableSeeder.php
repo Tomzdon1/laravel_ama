@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Pages;
 
 class PagesTableSeeder extends Seeder
 {
@@ -11,6 +12,12 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker =  Faker\Factory::create();
+        for($i = 0 ;$i<100; $i++){
+        $page = new Pages();
+        $page->title = $faker->company();
+        $page->content = $faker->text(200);
+        $page->save();
+        }
     }
 }
